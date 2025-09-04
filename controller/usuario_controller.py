@@ -79,6 +79,9 @@ def editar_perfil():
 @usuario_bp.route("/usuarios/<id>", methods=["DELETE"])
 def excluir_usuario(id):
     if UsuarioService.deletar(id):
+        if session.get("id_usuario") == id:
+            session.clear()
+            return jsonify({"mensagem": "Usuário deletado com sucesso. Você foi deslogado."}), 200
         return jsonify({"mensagem": "Usuário deletado com sucesso."}), 200
     return jsonify({"erro": "Usuário não encontrado."}), 404
 

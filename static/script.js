@@ -16,8 +16,11 @@ function excluirUsuario(cpf, id) {
         })
         .then(data => {
             alert(data.mensagem);
-            // Se for o usuário logado, redireciona para logout
-            window.location.href = "/logout";
+          if (data.mensagem.includes("deslogado")) {
+            window.location.href = "/login";
+        } else {
+            location.reload();
+        }
         })
         .catch(error => {
             console.error("Erro na requisição", error);

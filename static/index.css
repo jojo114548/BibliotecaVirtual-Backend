@@ -1,0 +1,258 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    width: 100vw;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9fb;
+}
+
+header {
+    width: 100%;
+    padding: 1rem 5%;
+    background-color: #f9f9fb;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+/* LOGO */
+.logo {
+    width: clamp(120px, 25vw, 300px);
+    height: auto;
+    margin-left: 20px;
+}
+
+.home {
+    border-bottom: 3px solid #004B87;
+    margin-left: 20px;
+}
+
+.nav-item {
+    font-size: clamp(14px, 2vw, 22px);
+    margin: 0 20px;
+}
+
+.item {
+    color: #0C233A !important;
+    font-weight: 600;
+}
+
+.custom-dropdown {
+    width: 300px;
+    height: 200px;
+}
+
+.custom-dropdown .dropdown-item {
+    font-size: clamp(16px, 2vw, 25px);
+    font-weight: 600;
+}
+
+.cadastrar-btn {
+    background-color: #2fd6cc;
+    color: #fff;
+    height: clamp(40px, 6vh, 60px);
+    width: clamp(80px, 12vw, 130px);
+    font-size: clamp(14px, 2vw, 20px);
+    font-weight: 600;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.562);
+    margin-right: 15px;
+}
+
+.entrar-btn {
+    background-color: #004B87;
+    color: #fff;
+    height: clamp(40px, 6vh, 60px);
+    width: clamp(70px, 10vw, 100px);
+    font-size: clamp(14px, 2vw, 20px);
+    font-weight: 600;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.521);
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 3rem 5%;
+    gap: 2rem;
+    background-color: #E8ECED;
+}
+
+.hero-text h1 {
+    font-size: clamp(1.8rem, 5vw, 4rem);
+    color: #0C233A;
+    font-weight: 600;
+}
+
+.hero-text h1 span {
+    color: #004B87;
+    font-weight: 600;
+}
+
+.hero-text p {
+    color: #0C233A;
+    font-size: clamp(16px, 2.5vw, 30px);
+    margin: 1.5rem 0;
+}
+
+.hero-text .buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.hero-btn {
+    height: clamp(50px, 10vw, 80px);
+    font-size: clamp(14px, 2.5vw, 24px);
+    font-weight: 700;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.562);
+}
+
+.btn-primary.hero-btn,
+.btn-secundario.hero-btn,
+.central-btn {
+    width: 100%;
+    max-width: 380px;
+}
+
+.btn-primary.hero-btn {
+    background-color: #004B87;
+    color: #fff;
+}
+
+.btn-secundario.hero-btn {
+    background-color: #2fd6cc;
+    color: #0C233A;
+}
+
+.carousel-inner{
+    margin-left: 13%;
+}
+
+
+
+.foto {
+    max-width: 100%;
+    border-radius: 20px;
+}
+
+.loop {
+    width: 80%;
+    background-color: #E8ECED;
+    border-radius: 20px;
+}
+
+.central {
+    min-height: 600px;
+    display: grid;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.central-text h1 {
+    font-size: clamp(2rem, 6vw, 80px);
+    color: #0C233A;
+    font-weight: 600;
+}
+
+.central-text h1 span {
+    color: #004B87;
+}
+
+.central-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 90vw;
+    min-height: 60vh;
+    gap: 1rem;
+}
+
+.central-img img {
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 20px;
+}
+
+.central-box {
+    background-color: #004B87;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    border-top-right-radius: 20px;
+}
+
+.central-box h1 {
+    color: #fff;
+    font-size: clamp(1.8rem, 6vw, 80px);
+    font-weight: 600;
+}
+
+.central-box p {
+    color: #fff;
+    font-size: clamp(1rem, 3vw, 30px);
+    margin-top: 1rem;
+}
+
+.central-btn {
+    height: clamp(50px, 8vh, 80px);
+    width: clamp(200px, 60vw, 380px);
+    font-size: clamp(14px, 2.5vw, 24px);
+    font-weight: 700;
+    background-color: #196eb4;
+    color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.562);
+}
+
+.livros {
+    min-height: 600px;
+    display: grid;
+    justify-content: center;
+    text-align: center;
+}
+
+.livros h1 {
+    font-size: clamp(2rem, 6vw, 80px);
+    color: #004B87;
+    font-weight: 600;
+    margin-top: 40px;
+}
+
+.controler {
+    display: grid;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+}
+
+
+
+@media (max-width: 992px) {
+    .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .central-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .central-img img,
+    .central-box {
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .central-box h1 {
+        font-size: clamp(1.5rem, 5vw, 2rem);
+    }
+}

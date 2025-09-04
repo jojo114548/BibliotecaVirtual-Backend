@@ -1,0 +1,162 @@
+/* ====== Reset simples ====== */
+* { box-sizing: border-box; }
+
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  color: #0f172a; /* slate-900 */
+  background: #ffffff;
+}
+
+/* ====== Variáveis ====== */
+:root{
+  --brand-500:#1553b7;
+  --brand-600:#0f49a9;
+  --brand-700:#0a3e95;
+  --card-bg:#ffffff;
+  --muted:#6b7280; /* gray-500 */
+  --radius:16px;
+  --shadow: 0 8px 24px rgba(2, 6, 23, .12);
+}
+
+/* ====== Layout base ====== */
+.container{
+  width: min(1120px, 100%);
+  margin-inline: auto;
+  padding: 24px;
+}
+
+/* ====== Hero/Header ====== */
+.hero{
+  /* textura com imagem + degrade por cima, como no print */
+  --overlay: linear-gradient(180deg, rgba(10,62,149,.95) 0%, rgba(10,62,149,.92) 40%, rgba(10,62,149,.86) 100%);
+  background:
+    var(--overlay),
+    url("/static/imgs/background.jpeg");
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  padding: 56px 0 80px;
+}
+
+.hero__content{
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  align-items: center;
+  gap: 32px;
+}
+
+.hero__branding{
+  display: grid;
+  align-items: start;
+  gap: 20px;
+}
+
+.logo{
+  height: 44px;
+  width: auto;
+}
+
+.hero__title{
+  font-size: clamp(28px, 4.2vw, 44px);
+  line-height: 1.08;
+  margin: 0;
+  font-weight: 800;
+}
+
+/* ====== Card/Login ====== */
+.card{
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 28px;
+  color: #0f172a;
+}
+
+.login__title{
+  margin: 0 0 8px;
+  font-size: 28px;
+  color: #0f172a;
+}
+
+.muted{ color: var(--muted); margin: 0 0 20px; }
+
+.form{ display: grid; gap: 14px; }
+
+.field{ display: grid; gap: 6px; }
+.field__label{ font-size: 14px; color: #111827; }
+
+.input{
+  appearance: none;
+  width: 100%;
+  height: 44px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  padding: 0 12px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color .2s, box-shadow .2s;
+}
+.input:focus{
+  border-color: var(--brand-600);
+  box-shadow: 0 0 0 3px rgba(21,83,183,.15);
+}
+
+.checkbox{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: #111827;
+}
+
+.btn{
+  height: 46px;
+  border: 0;
+  border-radius: 12px;
+  padding: 0 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.btn--primary{
+  background: var(--brand-600);
+  color: #fff;
+  transition: filter .2s, transform .02s;
+}
+.btn--primary:hover{ filter: brightness(1.05); }
+.btn--primary:active{ transform: translateY(1px); }
+
+.link{
+  display: inline-block;
+  margin-top: 12px;
+  color: var(--brand-600);
+  text-decoration: none;
+  font-size: 14px;
+}
+.link:hover{ text-decoration: underline; }
+
+/* ====== Rodapé ====== */
+.footer{
+  padding: 28px 0 48px;
+  text-align: center;
+  background: #fff;
+}
+
+/* ====== Responsivo ====== */
+@media (max-width: 960px){
+  .hero__content{
+    grid-template-columns: 1fr;
+  }
+  .hero{
+    padding-bottom: 48px;
+  }
+  .hero__branding{
+    text-align: center;
+    place-items: center;
+  }
+  .card{
+    margin: 0 auto;
+    max-width: 520px;
+  }
+}

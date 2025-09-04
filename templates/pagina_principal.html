@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca Virtual</title>
+    <link rel="stylesheet" href="/static/logado.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+</head>
+
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <img src="/static/imgs/logoPadrao.svg" alt="Logo" style="margin-bottom: 20px;">
+        <h2>Descubra seu Livro</h2>
+        <ul>
+            <a href="/pagina-principal"><li><i class="bi bi-house-door"></i> Início</li></a>
+            <li><i class="bi bi-journal-text"></i> Expert Reader</li>
+            <li><i class="bi bi-bookshelf"></i> Acervo</li>
+        </ul>
+        <h2>Seu Acervo</h2>
+        <ul>
+            <li><i class="bi bi-heart"></i> Minhas Listas</li>
+            <li><i class="bi bi-journal-bookmark"></i> Continuar Lendo</li>
+            <li><i class="bi bi-book"></i> Cartões de Estudo</li>
+            <li><i class="bi bi-file-earmark"></i> Destaques e Notas</li>
+            <li><i class="bi bi-lightbulb"></i> Sugestões de Leitura</li>
+            <li><i class="bi bi-clock-history"></i> Livros Lidos</li>
+            <li><i class="bi bi-graph-up-arrow"></i> Metas de Leitura</li>
+        </ul>
+        {% if session["perfil"] == "admin" %}
+        <h2>Área do Administrador</h2>
+        <ul>
+            <a href="/usuarios">
+                <li><i class="bi bi-eye"></i> Visualizar Usuários</li>
+            </a>
+        </ul>
+        {% endif %}
+    </div>
+
+    <!-- Main -->
+    <div class="main">
+        <div class="top-bar">
+            <div class="search-box">
+                <input type="text" placeholder="Digite o nome do livro ou autor(a) que deseja buscar"> <i class="bi bi-search"></i>
+            </div>
+            <div class="user" style="display: flex;">
+                <span style="margin-right: 15px;"><i class="bi bi-gear"></i> Configure sua meta</span>
+                <details style="margin-right: 15px;">
+                    <summary style="cursor: pointer;"><i class="bi bi-person-circle"></i> {{session["nome"]}}</summary>
+                    <a href="/editar-perfil" style="background-color: rgb(7, 72, 211); border-radius: 10px; padding: 5px;">Configurar Perfil</a>
+                </details>
+                <span><a href="/logout"><i class="bi bi-box-arrow-right"></i> Logout</a></span>
+            </div>
+        </div>
+
+        <div class="suggestions">
+            <h3>Sugestões de leitura</h3>
+            <div class="books">
+                <div class="book">
+                    <img src="/static/imgs/hobbies.jpg"" alt=" Livro 1">
+                    <div class="stars">⭐⭐⭐⭐☆</div>
+                    <h4>10 Lições sobre Hobbes</h4>
+                    <p>Fernando Magalhães</p>
+                </div>
+
+                <div class="book">
+                    <img src="/static/imgs/Cleyson.webp" alt="Livro 2">
+                    <div class="stars">⭐⭐⭐☆☆</div>
+                    <h4>Remuneração e Benefícios</h4>
+                    <p>Cleyson de Moraes Mello</p>
+                </div>
+
+                <div class="book">
+                    <img src="/static/imgs/marcelo.jpg" alt="Livro 3">
+                    <div class="stars">⭐⭐⭐☆☆</div>
+                    <h4>Legislação Ambiental</h4>
+                    <p>Marcelo Testa</p>
+                </div>
+
+                <div class="book">
+                    <img src="/static/imgs/o-ceu-comeca-com-voce.jpg" alt="Livro 4">
+                    <div class="stars">⭐⭐⭐⭐☆</div>
+                    <h4>O Céu começa em você</h4>
+                    <p>Anselm Grün</p>
+                </div>
+
+                <div class="book">
+                    <img src="/static/imgs/hildo.jpg" alt="Livro 5">
+                    <div class="stars">⭐⭐⭐⭐☆</div>
+                    <h4>Linguística, Ecologia e Ecolinguística</h4>
+                    <p>Hildo Honório do Couto</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

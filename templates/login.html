@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Biblioteca Virtual — Login</title>
+  <link rel="stylesheet" href="/static/login.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="hero">
+    <div class="hero__content container">
+      <div class="hero__branding">
+        <img src="/static/imgs/logo.png" alt="biblioteca virtual" class="logo" />
+        <h1 class="hero__title">Bem-vindo à <br>Biblioteca Virtual!</h1>
+      </div>
+
+      <section class="card login">
+        <h2 class="login__title">Login</h2>
+        <p class="muted">
+          Para acessar a plataforma, utilize os dados cadastrados na Biblioteca Virtual.
+        </p>
+
+        <form class="form" action="/login" method="POST">
+          <label class="field">
+            <span class="field__label">E-mail, documento ou código de acesso</span>
+            <input type="text" class="input" placeholder="seuemail@exemplo.com" name="email" required>
+          </label>
+
+          <label class="field">
+            <span class="field__label">Senha</span>
+            <input type="password" class="input" placeholder="••••••••" name="senha" required>
+          </label>
+
+          <label class="checkbox">
+            <input type="checkbox"> Lembre de mim
+          </label>
+
+          <button class="btn btn--primary" type="submit">Acessar</button>
+
+          <a href="#" class="link">Esqueci minha senha</a>
+        </form>
+      </section>
+    </div>
+  </header>
+
+  <footer class="footer">
+    <div class="container">
+      <a class="link" href="#">Acesse nossa Central de Ajuda</a>
+    </div>
+  </footer>
+</body>
+</html>

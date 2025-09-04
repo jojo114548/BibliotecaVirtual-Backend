@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 
-    
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -40,7 +39,7 @@
             </a>
         </ul>
         {% endif %}
-        
+
     </div>
 
     <!-- Main -->
@@ -54,7 +53,9 @@
                 <span style="margin-right: 15px;"><i class="bi bi-gear"></i> Configure sua meta</span>
                 <details style="margin-right: 15px;">
                     <summary style="cursor: pointer;"><i class="bi bi-person-circle"></i> {{session["nome"]}}</summary>
-                    <a href="/editar-perfil" style="background-color: rgb(7, 72, 211); border-radius: 10px; padding: 5px;">Configurar Perfil</a>
+                    <a href="/editar-perfil"
+                        style="background-color: rgb(7, 72, 211); border-radius: 10px; padding: 5px;">Configurar
+                        Perfil</a>
                 </details>
                 <span><a href="/logout"><i class="bi bi-box-arrow-right"></i> Logout</a></span>
             </div>
@@ -72,7 +73,7 @@
                     <th>Ação</th>
                 </tr>
                 {% for usuario in usuarios %}
-                    {% if usuario["id"] == session["id_usuario"] %}
+                {% if usuario["id"] == session["id_usuario"] %}
                 <tr id="linha-{{ usuario.id }}">
                     <td>{{ usuario["nome"] }}</td>
                     <td>{{ usuario["cpf"] }}</td>
@@ -102,7 +103,7 @@
                         </button>
                     </td>
                 </tr>
-                    {% endif %}
+                {% endif %}
                 {% endfor %}
             </table>
 
@@ -116,6 +117,7 @@
                                 <th class="th-update">Email</th>
                                 <th class="th-update">Idade</th>
                                 <th class="th-update">CPF</th>
+                                <th class="th-update">Perfil</th>
                                 <th class="th-update">Ação</th>
                             </tr>
                         </thead>
@@ -127,8 +129,13 @@
                                 <td><input type="number" id="idade" required></td>
                                 <td><input type="text" id="cpf" required></td>
                                 <td>
-                                    <button class="btn" title="Salvar" onclick="atualizarUsuario()" type="submit"
-                                        id="btn-atualizar">
+                                    <select id="perfil" required>
+                                        <option value="admin">Admin</option>
+                                        <option value="user">Usuário</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <button class="btn" title="Salvar" type="submit" id="btn-atualizar">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                             fill="currentColor" class="bi bi-box-arrow-down" viewBox="0 0 16 16">
                                             <path fill-rule="evenodd"
@@ -148,4 +155,5 @@
         </div>
     </div>
 </body>
+
 </html>

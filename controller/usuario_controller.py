@@ -1,7 +1,6 @@
 from flask import Blueprint, render_template, request, jsonify, session, redirect, url_for
 from service.usuario_service import UsuarioService
 
-
 usuario_bp = Blueprint("usuario", __name__)
 
 @usuario_bp.route("/")
@@ -87,12 +86,14 @@ def excluir_usuario(id):
 def pag_principal():
     return render_template("pagina_principal.html")
 
-@usuario_bp.route("/usuarios/", methods=["PUT"])
-def atualizar_usuario():
+@usuario_bp.route("/usuarios/<id>", methods=["PUT"])
+def atualizar_usuario(id):
     if "id_usuario" not in session:
         return "Acesso negado. Faça login.", 401
 
     usuario_edit = request.get_json()
+    # Adicione o ID ao objeto recebido, se necessário
+    usuario_edit["id"] = id
     if UsuarioService.atualizar(usuario_edit):
         return jsonify({"mensagem": "Usuário atualizado com sucesso"}), 200
     return jsonify({"erro": "Não foi possível salvar as modificações"}), 404

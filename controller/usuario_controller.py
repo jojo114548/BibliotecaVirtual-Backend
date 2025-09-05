@@ -60,7 +60,7 @@ def buscar_usuarios_json():
     return jsonify(UsuarioService.listar())
 
 @usuario_bp.route("/usuarios")
-def buscar_usuarios():
+def dados_usuarios():
     if "id_usuario" not in session:
         return "Acesso negado. Faça login.", 401
     usuarios = UsuarioService.listar()    

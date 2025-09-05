@@ -104,8 +104,4 @@ def atualizar_usuario(id):
         return jsonify({"mensagem": "Usuário atualizado com sucesso"}), 200
     return jsonify({"erro": "Não foi possível salvar as modificações"}), 404
 
-@usuario_bp.route("/admin")
-def admin_area():
-    if session.get("perfil") != "admin":
-        return redirect(url_for("usuario.home"))
-    return "Área do administrador"
+

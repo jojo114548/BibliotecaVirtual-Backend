@@ -51,13 +51,6 @@ def logout():
     return render_template("index.html")
 
 # ---------- ROTAS PROTEGIDAS ---------- #
-@usuario_bp.route("/usuarios/json")
-def buscar_usuarios_json():
-    if "id_usuario" not in session:
-        return "Acesso negado. Faça login.", 401
-    if session["perfil"] != "admin":
-        return "Acesso negado. Área de administração.", 401
-    return jsonify(UsuarioService.listar())
 
 @usuario_bp.route("/usuarios")
 def dados_usuarios():
